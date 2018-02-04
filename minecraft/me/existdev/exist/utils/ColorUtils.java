@@ -21,4 +21,8 @@ public class ColorUtils {
 		float b = 0.003921569F * (float) c.getBlue();
 		return (new Color(r, g, b, alpha)).getRGB();
 	}
+
+	public static int getColor(int r,int g,int b) {
+		return new Color(r,g,b).getRGB();
+	}
 }

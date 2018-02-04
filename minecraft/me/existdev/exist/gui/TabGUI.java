@@ -14,6 +14,7 @@ import me.existdev.exist.events.EventRender2D;
 import me.existdev.exist.module.Module;
 import me.existdev.exist.module.Module.Category;
 import me.existdev.exist.setting.Setting;
+import me.existdev.exist.utils.ColorUtils;
 import me.existdev.exist.utils.helper.RenderHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
@@ -28,7 +29,7 @@ public class TabGUI {
 
 	private int screen;
 
-	private int blackRectColor = 0x96000000;
+	private int blackRectColor = ColorUtils.getColor(30, 30, 30);
 
 	public TabGUI() {
 		this.categoryValues = new ArrayList();

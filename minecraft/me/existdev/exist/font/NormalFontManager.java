@@ -48,18 +48,18 @@ public class NormalFontManager extends FontRenderer {
 		return drawString(s, x, y, color, false);
 	}
 
-	public void drawCenteredString(final String s, final int x, final int y, final int color, final boolean shadow) {
+	public void drawCenteredString(final String s, final float x, final float y, final int color, final boolean shadow) {
 		if (shadow)
 			drawStringWithShadow(s, x - getStringWidth(s) / 2, y, color);
 		else
 			drawString(s, x - getStringWidth(s) / 2, y, color);
 	}
 
-	public void drawCenteredStringXY(final String s, final int x, final int y, final int color, final boolean shadow) {
+	public void drawCenteredStringXY(final String s, final float x, final float y, final int color, final boolean shadow) {
 		drawCenteredString(s, x, y - getHeight() / 2, color, shadow);
 	}
 
-	public void drawCenteredString(final String s, final int x, final int y, final int color) {
+	public void drawCenteredString(final String s, final float x, final float y, final int color) {
 		drawStringWithShadow(s, x - getStringWidth(s) / 2, y, color);
 	}
 
@@ -676,6 +676,6 @@ public class NormalFontManager extends FontRenderer {
 
 	public void drawStringWithShadow(String text, double d, double y, int color) {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

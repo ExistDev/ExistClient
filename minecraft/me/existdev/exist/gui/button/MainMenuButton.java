@@ -3,6 +3,7 @@ package me.existdev.exist.gui.button;
 import java.awt.Color;
 
 import me.existdev.exist.Exist;
+import me.existdev.exist.utils.ColorUtils;
 import me.existdev.exist.utils.helper.RenderHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiButton;
@@ -37,8 +38,8 @@ public class MainMenuButton extends GuiButton {
 			if (!this.enabled) {
 
 			} else if (this.hovered) {
-				this.offSpeedX = 6f;
-				this.speedA = 20;
+				this.offSpeedX = 3f;
+				this.speedA = 10;
 				this.targetA += this.speedA;
 				if (this.targetA >= 70) {
 					this.targetA = 70;
@@ -48,16 +49,16 @@ public class MainMenuButton extends GuiButton {
 					this.speedA = 5;
 				}
 				this.targetX += this.onSpeedX;
-				if (this.targetX >= 10) {
-					this.targetX = 10;
+				if (this.targetX >= 60) {
+					this.targetX = 60;
 				}
-				this.onSpeedX -= 0.8f;
+				this.onSpeedX -= 0.25f;
 				if (this.onSpeedX < 0) {
 					this.onSpeedX = 0f;
 				}
 			} else if (!this.hovered) {
-				this.onSpeedX = 6f;
-				this.speedA = 20;
+				this.onSpeedX = 3f;
+				this.speedA = 10;
 				this.targetA -= this.speedA;
 				if (this.targetA <= 0) {
 					this.targetA = 0;
@@ -70,16 +71,15 @@ public class MainMenuButton extends GuiButton {
 				if (this.targetX <= 0) {
 					this.targetX = 0;
 				}
-				this.offSpeedX -= 0.8f;
+				this.offSpeedX -= 0.25f;
 				if (this.offSpeedX < 0) {
 					this.offSpeedX = 0f;
 				}
 			}
-			RenderHelper.drawRect(this.xPosition - 10, hovered ? this.yPosition - targetX : this.yPosition,
-					this.xPosition + this.width + 10, this.yPosition + this.height,
-					hovered ? this.default_getWhite(10 + targetA) : this.getBlack(50 + targetA));
+			RenderHelper.drawRect(this.xPosition - 10,this.yPosition - (targetX / 3),
+					this.xPosition + this.width + 10, this.yPosition + this.height,ColorUtils.getColor(255 - (this.targetA * 3),255 - (this.targetA * 3), 255 - (this.targetA * 3)));
 			Exist.fontRenderer.fontRenderer30.drawCenteredString(this.displayString, this.xPosition + this.width / 2,
-					this.yPosition + (this.height - 8) / 2 - 2, hovered ? 0xFF000000 : 0xFFFFFFFF);
+					(this.yPosition + (this.height - 8) / 2 - 2 - (targetX / 6)), ColorUtils.getColor(this.targetA * 3, this.targetA * 3, this.targetA * 3));
 		}
 	}
 

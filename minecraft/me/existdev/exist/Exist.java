@@ -55,7 +55,7 @@ import net.minecraft.util.ChatComponentText;
 
 public class Exist {
 
-	public static String Name = "LiquidBounce";
+	public static String Name = "Exist";
 	public static double Version = 0.4;
 
 	private static ArrayList<Module> mods;
@@ -71,7 +71,7 @@ public class Exist {
 	public static TabGUI tabGui;
 
 	public Exist() {
-		Display.setTitle(Name + " " + Version + " ExistDev");
+		Display.setTitle(Name + " " + Version);
 		mods = new ArrayList<Module>();
 		tabGui = new TabGUI();
 		settingManager = new SettingManager();

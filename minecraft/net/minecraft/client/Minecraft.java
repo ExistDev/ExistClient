@@ -553,6 +553,7 @@ public class Minecraft implements IThreadListener, IPlayerUsage {
 		this.checkGLError("Post startup");
 		this.ingameGUI = new IngameGUI(this);
 		// this.main = new Main();
+		LoadingMain.Initlize();
 
 		if (this.serverName != null) {
 			this.displayGuiScreen(new GuiConnecting(new GuiMainMenu(), this, this.serverName, this.serverPort));
