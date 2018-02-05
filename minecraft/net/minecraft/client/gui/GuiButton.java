@@ -121,10 +121,12 @@ public class GuiButton extends Gui {
 					this.offSpeedX = 0f;
 				}
 			}
-			RenderHelper.drawRect(this.xPosition,this.yPosition - (targetX / 3),
-					this.xPosition + this.width, this.yPosition + this.height,ColorUtils.getColor(255 - (this.targetA * 3),255 - (this.targetA * 3), 255 - (this.targetA * 3)));
-			Exist.fontRenderer.fontRenderer30.drawCenteredString(this.displayString, this.xPosition + this.width / 2,
-					(this.yPosition + (this.height - 8) / 2 - 2 - (targetX / 6)), ColorUtils.getColor(this.targetA * 3, this.targetA * 3, this.targetA * 3));
+			//RenderHelper.drawRect(this.xPosition,this.yPosition - (targetX / 3),
+			//		this.xPosition + this.width, this.yPosition + this.height,ColorUtils.getColor(255 - (this.targetA * 3),255 - (this.targetA * 3), 255 - (this.targetA * 3)));
+			RenderHelper.drawBorderedRect(this.xPosition, this.yPosition, this.xPosition + this.width, this.yPosition + this.height, 1,
+					ColorUtils.getColor(255, 255, 255, (int) (255 - (this.targetA * 3.5F))) , ColorUtils.getColor(255, 255, 255,(int) (this.targetA * 3.5F)));
+			Exist.fontRenderer.fontRenderer30.drawCenteredString(this.displayString, this.xPosition + this.width / 2,this.yPosition + (this.height / 3),
+					ColorUtils.getColor(255-(this.targetA * 3), 255-(this.targetA * 3), 255-(this.targetA * 3)));
 		}
 	}
 

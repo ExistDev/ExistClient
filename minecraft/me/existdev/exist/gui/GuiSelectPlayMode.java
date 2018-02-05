@@ -33,9 +33,9 @@ public class GuiSelectPlayMode extends GuiScreen {
 		int objWidth = 63;
 		int xMid = this.width / 2 - 75;
 
-		this.buttonList.add(new PlayModeButton(0, 0, initHeight, objWidth, objHeight, SinglePlayer));
-		this.buttonList.add(new PlayModeButton(1, 0, initHeight + 25, objWidth, objHeight, MultiPlayer));
-		this.buttonList.add(new PlayModeButton(2, 0, initHeight + 100, objWidth, objHeight, Back));
+		this.buttonList.add(new MainMenuButton(0, 0, initHeight, objWidth, objHeight, SinglePlayer));
+		this.buttonList.add(new MainMenuButton(1, 0, initHeight + 25, objWidth, objHeight, MultiPlayer));
+		this.buttonList.add(new MainMenuButton(2, 0, initHeight + 100, objWidth, objHeight, Back));
 	}
 
 	@Override

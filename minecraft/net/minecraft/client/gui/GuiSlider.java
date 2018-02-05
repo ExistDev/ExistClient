@@ -1,5 +1,7 @@
 package net.minecraft.client.gui;
 
+import me.existdev.exist.utils.ColorUtils;
+import me.existdev.exist.utils.helper.RenderHelper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
@@ -87,8 +89,9 @@ public class GuiSlider extends GuiButton
             }
 
             GlStateManager.color(1.0F, 1.0F, 1.0F, 1.0F);
-            this.drawTexturedModalRect(this.xPosition + (int)(this.field_175227_p * (float)(this.width - 8)), this.yPosition, 0, 66, 4, 20);
-            this.drawTexturedModalRect(this.xPosition + (int)(this.field_175227_p * (float)(this.width - 8)) + 4, this.yPosition, 196, 66, 4, 20);
+            RenderHelper.drawBorderedRect(this.xPosition,this.yPosition, this.xPosition + this.width, this.yPosition + this.height,2,ColorUtils.getColor(255, 255, 255),ColorUtils.getColor(0, 0, 0, 0));
+//            this.drawTexturedModalRect(this.xPosition + (int)(this.field_175227_p * (float)(this.width - 8)), this.yPosition, 0, 66, 4, 20);
+//            this.drawTexturedModalRect(this.xPosition + (int)(this.field_175227_p * (float)(this.width - 8)) + 4, this.yPosition, 196, 66, 4, 20);
         }
     }
 

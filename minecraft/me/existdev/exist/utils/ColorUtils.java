@@ -25,4 +25,7 @@ public class ColorUtils {
 	public static int getColor(int r,int g,int b) {
 		return new Color(r,g,b).getRGB();
 	}
+	public static int getColor(int R,int G,int B,int A) {
+		return new Color(R,G,B,A).getRGB();
+	}
 }

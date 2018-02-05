@@ -8,6 +8,7 @@ import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.GL11;
 
 import me.existdev.exist.Exist;
+import me.existdev.exist.utils.ColorUtils;
 import me.existdev.exist.utils.RenderUtils;
 import me.existdev.exist.utils.helper.RenderHelper;
 import net.minecraft.client.Minecraft;
@@ -114,6 +115,8 @@ public class GuiAltManager extends GuiScreen {
 		}
 		drawDefaultBackground();
 		renderBackground(this.width, this.height);
+		RenderHelper.drawRect(7, 7, 7 + Exist.fontRenderer.fontRenderer40.getStringWidth(this.mc.session.getUsername()), 7 + Exist.fontRenderer.fontRenderer40.FONT_HEIGHT,
+				ColorUtils.getColor(0, 0, 0,120));
 		Exist.fontRenderer.fontRenderer40.drawStringWithShadow(this.mc.session.getUsername(), 10, 10, 0xFFFFFFFF);
 		RenderUtils.drawRect(this.width - 370, 8.0F, this.width - 270, 28, Integer.MIN_VALUE);
 		Exist.fontRenderer.helvetica50.drawCenteredString("Alt Manager", this.width / 2, 10, -1);
